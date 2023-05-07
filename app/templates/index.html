@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Home - ipeTutors</title>
+      <link rel="stylesheet" href="/static/styles/style.css">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+      
+</head>
+<body>
+      <div id="page" class="site">
+            {% include '/components/header.html' %}
+            <main>
+                  <div class="hero">
+                        <div class="container">
+                              <div class="grid">
+                                    <div class="half">
+                                          <div class="grid__text up animate">
+                                                <h2>Inspiration Per Excellence</h2>
+                                                <p>Inspiring and inflencing <br> Value system towards  excellence.</p>
+                                                <div class="button-cta">
+                                                      <a href="#" class="light">Register Now!</a>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="half">
+                                          <div class="hero__image">
+                                                <div class="col left up animate">
+                                                      <div class="pic"><img src="/static/assets/8.png" alt=""></div>
+                                                      <div class="pic"><img src="/static/assets/7.png" alt=""></div>
+                                                </div>
+                                                <div class="col middle down animate">
+                                                      <div class="pic"><img src="/static/assets/3.png" alt=""></div>
+                                                      <div class="pic"><img src="/static/assets/6.png" alt=""></div>
+                                                      <div class="pic"><img src="/static/assets/1.png" alt=""></div>
+                                                </div>
+                                                <div class="col right up animate">
+                                                      <div class="pic"><img src="/static/assets/4.png" alt=""></div>
+                                                      <div class="pic"><img src="/static/assets/2.png" alt=""></div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="register_popup">
+                        <div class="popup_inner">
+                              <i class="ri-close-line close_popup_btn"></i>
+                              <h2>what are you applying for?</h2>
+                              <p>Are you applying as a teacher or a student?</p>
+                              <div class="registration_options">
+                                    <form action="{{ url_for('registration.register') }}" method="get">
+                                          <div>
+                                                <input type="radio" name="registration_options"  value="student" id="registration_option1">
+                                                <input type="radio" name="registration_options" value="tutor" id="registration_option2">
+                                                <label for="registration_option1" class="registration_option1">
+                                                      <i class="ri-user-line"></i>
+                                                      <span>Register as a student</span>
+                                                </label>
+                                                <label for="registration_option2" class="registration_option2">
+                                                      <i class="ri-team-line"></i>
+                                                      <span>register as a tutor</span>
+                                                </label>
+                                          </div>
+                              
+                                          <button type="submit" class="btn-submit">Continue <i class="ri-arrow-right-s-line"></i></button>
+                                    </form>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="about">
+                        <div class="container">
+                              <div class="about-grid up animate">
+                                    <div class="half">
+                                          <div class="about-grid__text">
+                                                <h2>About Us</h2>
+                                                <p>Inspiration per Excellence is here to bridge the gap between purpose and
+                                                      discovery and fulfillment. <br>
+                                                      Commissioned to inspire and inflence value system towards excellence.
+                                                </p>
+                                                <a href="#">Learn More<i class="ri-arrow-right-line"></i></a>
+                                          </div>
+                                    </div>
+                                    <div class="half">
+                                          <div class="about-image">
+                                                <img src="/static/assets/about us image.jpg" alt="about us imag of students in classroom">
+                                          </div>
+                                    </div>
+                              </div>
+                              
+                        </div>
+                  </div>
+                  <div class="services">
+                        <div class="container">
+                              <div class="services-grid">
+                                    <div class="half">
+                                          <div class="services-grid__text">
+                                                <span>What we do</span>
+                                                <h2>Services</h2>
+                                                <p>A brand of IPEC is afast becominng household name for quality service delivery
+                                                      in the underlisted categories and lots more.
+                                                </p>
+                                                <a href="#"><i class="ri-arrow-right-s-line"></i>See More</a>
+                                          </div>
+                                    </div>
+                                    <div class="half">
+                                          <div class="services-container right animate">
+                                                <div class="services-template">
+                                                      <h4>Home Tutoring</h4>
+                                                      <p>We offer private based tutorials</p>
+                                                      <a href="#"><i class="ri-arrow-right-line"></i></a>
+                                                </div>
+                                                <div class="services-template">
+                                                      <h4>Skill acquisition</h4>
+                                                      <p>We offer private based tutorials</p>
+                                                      <a href="#"><i class="ri-arrow-right-line"></i></a>
+                                                </div>
+                                                <div class="services-template">
+                                                      <h4>Professional Services</h4>
+                                                      <p>We offer private based tutorials</p>
+                                                      <a href="#"><i class="ri-arrow-right-line"></i></a>
+                                                </div>
+                                                <div class="services-template">
+                                                      <h4>Public classes</h4>
+                                                      <p>We offer private based tutorials</p>
+                                                      <a href="about.html#service-professional"><i class="ri-arrow-right-line"></i></a>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="values">
+                        <div class="container">
+                              <div class="values-grid">
+                                    <h2>Our Core Value</h2>
+                                    <div class="values-inner up animate">
+                                          <div class="values-container">
+                                                <span>
+                                                      <i class="ri-loader-line"></i>
+                                                </span>
+                                                <div>
+                                                      <h4>Dignity</h4>
+                                                      <p>We carry our responsibilities with high deal of respect and hold our client with high esteem.</p>
+                                                </div>
+                                          </div>
+                                          <div class="values-container">
+                                                <span>
+                                                      <i class="ri-sun-line"></i>
+                                                </span>
+                                                <div>
+                                                      <h4>Excellence</h4>
+                                                      <p>At <b>IpeTutors</b> we choose the understanding feature in all things.</p>
+                                                </div>
+                                          </div>
+                                          <div class="values-container">
+                                                <span>
+                                                      <i class="ri-fingerprint-line"></i>
+                                                </span>
+                                                <div>
+                                                      <h4>Integrity</h4>
+                                                      <p>Our clients have never doubt our level of uprightness.</p>
+                                                </div>
+                                          </div>
+                                          <div class="values-container">
+                                                <a href="#"><i class="ri-arrow-right-s-line"></i>See More</a>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="reasons">
+                        <div class="container">
+                              <div class="reasons-grid">
+                                    <div class="reasons-grid__text">
+                                          <span>Reasons</span>
+                                          <h2>Why Choose Us?</h2>
+                                    </div>
+                                    <div class="reasons-inner up animate">
+                                          <div class="reasons-container">
+                                                <span>01</span>
+                                                <div>
+                                                      <h4>We care about learning and excellence.</h4>
+                                                      <p>Why should we learn if not to attain excellence if it's not excellent,
+                                                            it's not <b>ipeTutors</b>. Our professional tutors are people who care and
+                                                                  turns teaching into pleasure.
+                                                      </p>
+                                                </div>
+                                          </div>
+                                          <div class="reasons-container">
+                                                <span>02</span>
+                                                <div>
+                                                      <h4>Customised tutoring style</h4>
+                                                      <p>
+                                                            We have unique styles of insporing each of our students.  That in itself 
+                                                            says much about the <b>Per</b> in our brand name.
+                                                      </p>
+                                                </div>
+                                          </div>
+                                          <div class="reasons-container">
+                                                <span>03</span>
+                                                <div>
+                                                      <h4>We make learning easy and effective</h4>
+                                                      <p>
+                                                            We are not just creating a short term learning platform, but our operation is designed
+                                                            for our students to build up skills sets that will be useful now and in the future.
+                                                      </p>
+                                                </div>
+                                          </div>
+                                          <div class="reasons-container">
+                                                <span>04</span>
+                                                <div>
+                                                      <h4>Tested and trusted by our clients</h4>
+                                                      <p>
+                                                            We have built a strong client based trust. Our clients are now happy with the peace of 
+                                                            mind that they enjoy.
+                                                      </p>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="testimonials">
+                        <div class="container">
+                              <div class="testimonials-grid up animate">
+                                    <div class="half">
+                                          <div class="testimonials-grid__text">
+                                                <span>Testimonials</span>
+                                                <h2>What our students say about us</h2>
+                                                <p>
+                                                      We have helped a number of students to achieve succcess.
+                                                      we have served as encouragement to many who were at the verge of
+                                                      giving up. We are grateful that they got in touch at the right time.
+                                                      Check what some of the have to say.
+                                                </p>
+                                               
+                                          </div>
+                                    </div>
+                                    <div class="half">
+                                          <div class="pagination">
+                                                <div class="dots"></div>
+                                                <div class="dots active"></div>
+                                                <div class="dots"></div>
+                                                <div class="dots"></div>
+                                          </div>
+                                          <div class="testimonials-container">
+                                                <!-- <div class="testimonials-inner"> -->
+                                                      <div class="testimony">
+                                                            <p>
+                                                                  Ever since i joined IPE Tutors, I have seen improvement in my academic 
+                                                                  performance especially in mathematics and physics. I had because of these
+                                                                  subjects wanted to change from science to art class, but not anymore...
+                                                            </p>
+                                                            <h4>Adeleke Mopeloluwa</h4>
+                                                            <span>Student</span>
+                                                            <div class="quote">"</div>
+                                                      </div>
+                                                      <div class="testimony">
+                                                            <p>
+                                                                  I have always had problem understanding while reading on my own. But since i 
+                                                                  stated attending tutorialc clases orgainised by IpeTutors, they made me 
+                                                                  understand better. They are really working hard to bring the best out of students.
+                                                            </p>
+                                                            <h4>Aderoju Islamiat</h4>
+                                                            <span>Student</span>
+                                                            <div class="quote">"</div>
+                                                      </div>
+                                                <!-- </div> -->
+                                                <!-- <div class="testimonials-inner">
+                                                      <div class="testimony">
+                                                            <p>
+                                                                  Ever since i joined IPE Tutors, I have seen improvement in my academic 
+                                                                  performance especially in mathematics and physics. I had because of these
+                                                                  subjects wanted to change from science to art class, but not anymore...
+                                                            </p>
+                                                            <h4>John Shaibu</h4>
+                                                            <span>Student</span>
+                                                            <div class="quote">"</div>
+                                                      </div>
+                                                      <div class="testimony">
+                                                            <p>
+                                                                  I have always had problem understanding while reading on my own. But since i 
+                                                                  stated attending tutorialc clases orgainised by IpeTutors, they made me 
+                                                                  understand better. They are really working hard to bring the best out of students.
+                                                            </p>
+                                                            <h4>Aderoju Islamiat</h4>
+                                                            <span>Student</span>
+                                                            <div class="quote">"</div>
+                                                      </div>
+                                                </div> -->
+                                          </div>
+                                    </div>
+                                    <div class="button-cta">
+                                          <a href="#" class="light">Read More</a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="call-to-action">
+                        <div class="container up animate">
+                              <div class="call-to-action-grid">
+                                    <h3>Do you wish to achieve success in your academics?</h3>
+                                    <p>
+                                          Reprehenderit aute aliqua nulla id quis. Et aliquip commodo quis reprehenderit. Voluptate exercitation occaecat officia labore aliqua nulla. 
+                                    </p>
+                                    <div class="button-cta">
+                                          <a href="#" class="light">Register</a>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="contact">
+                        <div class="container up animate">
+                              <div class="contact-grid">
+                                    <div class="contact-grid__text">
+                                          <h2>Get in Touch</h2>
+                                          <p>You can get in touch with us through any of the following medium. <br>
+                                                we are always available to serve our clients.
+                                          </p>
+                                    </div>
+                                    <div class="form">
+                                          <div class="half">
+                                                <h3>Send Us a message</h3>
+                                                <form action="#" method="post">
+                                                      <div>
+                                                            <div>
+                                                                  <label for="namae">Your name</label>
+                                                                  <input type="text" name="name" id="name" placeholder="E.g: John Doe">
+                                                            </div>
+                                                            <div>
+                                                                  <label for="email">Your Email</label>
+                                                                  <input type="email" name="email" id="email" placeholder="E.g: youremail@example.com">
+                                                            </div>
+                                                      </div>
+                                                      <div>
+                                                            <div>
+                                                                  <label for="namae">Phone Number</label>
+                                                                  <input type="tel" name="phone" id="phone" placeholder="E.g: 08012345678">
+                                                            </div>
+                                                            <div>
+                                                                  <label for="email">Subject</label>
+                                                                  <input type="text" name="subject" id="subject" placeholder="Subject">
+                                                            </div>
+                                                      </div>
+                                                      <div class="message">
+                                                            <label for="message_body">Message</label>
+                                                            <textarea name="message_body" id="message_body" placeholder="Your message here..."></textarea>
+                                                      </div>
+                                                      <button type="submit">Send message</button>
+                                                </form>
+                                          </div>
+                                          <div class="half">
+                                                <div>
+                                                      <h3>Contact Information</h3>
+                                                      <div>
+                                                            <i class="ri-map-pin-line"></i>
+                                                            <p>1. Princess Gbadebeo Close,
+                                                                  Irepolodun, agbowo Express,
+                                                                  Ibadan, Oyo state.
+                                                            </p>
+                                                      </div>
+                                                      <div>
+                                                            <i class="ri-phone-line"></i>
+                                                            <p>
+                                                                  <a href="tel:+2347030397449">+234 703 0397 449</a>
+                                                                  <br>
+                                                                  <a href="tel:+2347030397449">+234 703 0397 449</a>
+                                                            </p>
+                                                      </div>
+                                                      <div>
+                                                            <i class="ri-mail-line"></i>
+                                                            <p>
+                                                                  <a href="mailto:ipecenter16@gmail.com">ipecenter16@gmail.com</a>
+                                                            </p>
+                                                      </div>
+                                                      
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </main>
+            {% include '/components/footer.html' %}
+            <div class="overlay"></div>
+      </div>
+      <script src="/static/js/index.js"></script>
+</body>
+</html>

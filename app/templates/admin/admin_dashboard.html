@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard  - IpeTutors</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='/styles/admin/admin_dashboard.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+      <div class="site">  
+            <aside>
+                  <div class="navbar_inner">
+                        <i class="ri-close-line close_sidebar_btn"></i>
+                        <div class="logo"><a href="{{ url_for('index') }}">ipe<span>Tutors</span></a></div>
+                        <ul>
+                              <li>
+                                    <a href="{{ url_for('admin.dashboard') }}" class="active_link">
+                                          <i class="ri-layout-4-line"></i>
+                                          Overview                                   
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.registeredStudents') }}">
+                                          <i class="ri-user-2-line"></i>
+                                          Students
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.registeredTeachers') }}">
+                                          <i class="ri-team-line"></i>
+                                          Teachers
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.appliedStudents') }}">
+                                          <i class="ri-user-add-line"></i>
+                                          Applicants
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.enquires') }}">
+                                          <i class="ri-question-line"></i>
+                                          Enquires
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.adminPage') }}">
+                                          <i class="ri-settings-3-line"></i>
+                                          Settings
+      
+                                    </a>
+                              </li>
+                        </ul>
+                  </div>
+
+            </aside>
+            <div class="main_container">
+                  {% include 'admin/admin_components/header.html' %}
+                  <main>
+      
+                        <div class="dashboard_content animate up">
+                              <div class="beadcrumb">
+                                    <a href="#">Dashboard</a> > <a href="#">Overview</a>
+                              </div>
+                              
+                              <div class="greeting">
+                                    <h2 id="greeting"></h2>
+                                    <script>
+                                          const d = new Date().getHours();
+                                          const greet = document.getElementById('greeting');
+                                          var greeting;
+
+                                          if (d <= 11){
+                                                greeting = 'Hello, Good Morning.';
+                                          } else if(d <= 16){
+                                                greeting = 'Hello, Good Afternoon.';
+                                          } else{
+                                                greeting = 'Hello, Good Evening.';
+
+                                          }
+                                    greet.innerHTML = greeting;
+                                    </script>
+                              </div>
+                              
+                              <div class="record_overview">
+                                    <div class="overview">
+                                          <div>
+                                                <i class="ri-user-line"></i>
+                                                <span>Total registered student</span>
+                                                <h3>123</h3>
+                                          </div>
+                                    </div>
+                                    <div class="overview">
+                                          <div>
+                                                <i class="ri-user-add-line"></i>
+                                                <span>Total admitted student</span>
+                                                <h3>123</h3>
+                                          </div>
+                                    </div>
+                                    <div class="overview">
+                                          <div>
+                                                <i class="ri-team-line"></i>
+                                                <span>Total applied teachers</span>
+                                                <h3>123</h3>
+                                          </div>
+                                    </div>
+                                    <div class="overview">
+                                          <div>
+                                                <i class="ri-team-line"></i>
+                                                <span>Total accredited teachers</span>
+                                                <h3>123</h3>
+                                          </div>
+                                    </div>
+                                   
+                              </div>
+                              
+                              <div class="student_data_table">
+                                    <h3>Student Applications</h3>
+                                    <div>
+
+                                          <table>
+                                                <thead>
+                                                      <th>Full name</th>
+                                                      <th>Email</th>
+                                                      <th>Phone number</th>
+                                                      <th>Teaching mode</th>
+                                                      <th>Status</th>
+                                                      <th>Date</th>
+                                                </thead>
+                                                <tbody>
+                                                      {% for student in students %}
+                                                            <a href="#">
+                                                                  <tr>
+                                                                        <td style="width: 20%">{{ student.firstname | capitalize }} {{ student.lastname | capitalize }}</td>
+                                                                        <td>{{ student.email }}</td>
+                                                                        <td>{{ student.phone_number }}</td>
+                                                                        <td>{{ student.teaching_mode }}</td>
+                                                                        <td>{{ student.admission_status }}</td>
+                                                                        <td>{{ student.date }}</td>
+                                                                  </tr>
+                                                            </a>
+                                                      {% endfor %}
+      
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>                        
+                        </div>
+      
+                  </main>
+            </div>
+      </div>
+      <!-- <script src="{{ url_for('static', filename='/js/index.js') }}"></script> -->
+      <script src="{{ url_for('static', filename='/js/admin/admin.js') }}"></script>
+</body>
+</html>

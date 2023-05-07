@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Enquires  - IpeTutors</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='/styles/admin/enquires.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+      <div class="site">  
+            <aside>
+                  <div class="navbar_inner">
+                        <i class="ri-close-line close_sidebar_btn"></i>
+                        <div class="logo"><a href="{{ url_for('index') }}">ipe<span>Tutors</span></a></div>
+                        <ul>
+                              <li>
+                                    <a href="{{ url_for('admin.dashboard') }}">
+                                          <i class="ri-layout-4-line"></i>
+                                          Overview                                   
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.registeredStudents') }}">
+                                          <i class="ri-user-2-line"></i>
+                                          Students
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.registeredTeachers') }}">
+                                          <i class="ri-team-line"></i>
+                                          Teachers
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.appliedStudents') }}">
+                                          <i class="ri-user-add-line"></i>
+                                          Applicants
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.enquires') }}" class="active_link">
+                                          <i class="ri-question-line"></i>
+                                          Enquires
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.adminPage') }}">
+                                          <i class="ri-settings-3-line"></i>
+                                          Settings
+      
+                                    </a>
+                              </li>
+                        </ul>
+                  </div>
+
+            </aside>
+            <div class="main_container">
+                  {% include 'admin/admin_components/header.html' %}
+                  <main>
+      
+                        <div class="dashboard_content animate up">
+                              <div class="beadcrumb">
+                                    <a href="#">Dashboard</a> > <a href="#">Enquires</a>
+                              </div>
+                              <div>
+                                    <h2>Enquires</h2>
+                              </div>
+                              <div class="enquires_container">
+                                    <a href="#" class="enquiry">
+                                          <h3>Qui sit irure enim labore occaecat Lorem labore culpa ullamco dolor voluptate.</h3>
+                                          <div class="enquiry_details">
+                                                <p><i class="ri-user-2-line"></i>John Shaibu</p>
+                                                <p><i class="ri-mail-line"></i>Johnmaxwell058@gmail.com</p>
+                                                <p><i class="ri-phone-line"></i>+23482874866</p>
+                                                <p><i class="ri-check-line"></i>unreplied</p>
+                                          </div>
+                                          <p>
+                                                Dolor dolore nisi aute aute fugiat non laborum velit occaecat 
+                                                magna cupidatat laborum commodo. Culpa et amet culpa 
+                                                eiusmod in nostrud sunt. Occaecat id elit quis occaecat nostrud 
+                                                ullamco. Sunt proident eu do qui aliqua irure qui fugiat adipisicing 
+                                                deserunt excepteur officia commodo. Amet incididunt nulla cupidatat 
+                                                pariatur Lorem sint irure exercitation. Non nostrud labore pariatur est.
+                                          </p>
+                                    </a>
+                                    <a href="#" class="enquiry">
+                                          <h3>Qui sit irure enim labore occaecat Lorem labore culpa ullamco dolor voluptate.</h3>
+                                          <div class="enquiry_details">
+                                                <p><i class="ri-user-2-line"></i>John Shaibu</p>
+                                                <p><i class="ri-mail-line"></i>Johnmaxwell058@gmail.com</p>
+                                                <p><i class="ri-phone-line"></i>+23482874866</p>
+                                          </div>
+                                          <p>
+                                                Dolor dolore nisi aute aute fugiat non laborum velit occaecat 
+                                                magna cupidatat laborum commodo. Culpa et amet culpa 
+                                                eiusmod in nostrud sunt. Occaecat id elit quis occaecat nostrud 
+                                                ullamco. Sunt proident eu do qui aliqua irure qui fugiat adipisicing 
+                                                deserunt excepteur officia commodo. Amet incididunt nulla cupidatat 
+                                                pariatur Lorem sint irure exercitation. Non nostrud labore pariatur est.
+                                          </p>
+                                    </a>
+                                    <a href="#" class="enquiry">
+                                          <h3>Qui sit irure enim labore occaecat Lorem labore culpa ullamco dolor voluptate.</h3>
+                                          <div class="enquiry_details">
+                                                <p><i class="ri-user-2-line"></i>John Shaibu</p>
+                                                <p><i class="ri-mail-line"></i>Johnmaxwell058@gmail.com</p>
+                                                <p><i class="ri-phone-line"></i>+23482874866</p>
+                                          </div>
+                                          <p>
+                                                Dolor dolore nisi aute aute fugiat non laborum velit occaecat 
+                                                magna cupidatat laborum commodo. Culpa et amet culpa 
+                                                eiusmod in nostrud sunt. Occaecat id elit quis occaecat nostrud 
+                                                ullamco. Sunt proident eu do qui aliqua irure qui fugiat adipisicing 
+                                                deserunt excepteur officia commodo. Amet incididunt nulla cupidatat 
+                                                pariatur Lorem sint irure exercitation. Non nostrud labore pariatur est.
+                                          </p>
+                                    </a>
+                                    <a href="#" class="enquiry">
+                                          <h3>Qui sit irure enim labore occaecat Lorem labore culpa ullamco dolor voluptate.</h3>
+                                          <div class="enquiry_details">
+                                                <p><i class="ri-user-2-line"></i>John Shaibu</p>
+                                                <p><i class="ri-mail-line"></i>Johnmaxwell058@gmail.com</p>
+                                                <p><i class="ri-phone-line"></i>+23482874866</p>
+                                          </div>
+                                          <p>
+                                                Dolor dolore nisi aute aute fugiat non laborum velit occaecat 
+                                                magna cupidatat laborum commodo. Culpa et amet culpa 
+                                                eiusmod in nostrud sunt. Occaecat id elit quis occaecat nostrud 
+                                                ullamco. Sunt proident eu do qui aliqua irure qui fugiat adipisicing 
+                                                deserunt excepteur officia commodo. Amet incididunt nulla cupidatat 
+                                                pariatur Lorem sint irure exercitation. Non nostrud labore pariatur est.
+                                          </p>
+                                    </a>
+                                    <a href="#" class="enquiry">
+                                          <h3>Qui sit irure enim labore occaecat Lorem labore culpa ullamco dolor voluptate.</h3>
+                                          <div class="enquiry_details">
+                                                <p><i class="ri-user-2-line"></i>John Shaibu</p>
+                                                <p><i class="ri-mail-line"></i>Johnmaxwell058@gmail.com</p>
+                                                <p><i class="ri-phone-line"></i>+23482874866</p>
+                                          </div>
+                                          <p>
+                                                Dolor dolore nisi aute aute fugiat non laborum velit occaecat 
+                                                magna cupidatat laborum commodo. Culpa et amet culpa 
+                                                eiusmod in nostrud sunt. Occaecat id elit quis occaecat nostrud 
+                                                ullamco. Sunt proident eu do qui aliqua irure qui fugiat adipisicing 
+                                                deserunt excepteur officia commodo. Amet incididunt nulla cupidatat 
+                                                pariatur Lorem sint irure exercitation. Non nostrud labore pariatur est.
+                                          </p>
+                                    </a>
+                              </div>
+                              
+                        </div>
+      
+                  </main>
+            </div>
+      </div>
+      <!-- <script src="{{ url_for('static', filename='/js/index.js') }}"></script> -->
+      <script src="{{ url_for('static', filename='/js/admin/admin.js') }}"></script>
+</body>
+</html>

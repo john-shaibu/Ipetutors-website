@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Request payment | IpeTutors</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='/styles/admin/student_payment_request.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+      <div class="site">
+            <div class="form-container">
+                  {% for studet_details in student_to_request_payment_from %}
+                        <h2>Request payment from "{{ studet_details.firstname | capitalize }}".</h2>
+                        <form action="#" method="post">
+                              <div>
+                              <span>Where are you sending it to</span>
+                              <div>
+                                    <input type="radio" name="email_or_phone" id="send_to_email" value="email">
+                                    <input type="radio" name="email_or_phone" id="send_to_phone" value="phone">
+                                    <label for="send_to_email" class="send_to_email">Email</label>
+                                    <label for="send_to_phone" class="send_to_phone">Phone number</label>
+                              </div>
+                        </div>
+                        <div id="send_request_to_email">
+                              <label for="user_email">Recepient Email address</label>
+                              <input type="email" name="user_email" id="user_email" value="{{ studet_details.email }}" placeholder="Recepient Email address">
+                        </div>
+                        <div id="send_request_to_phone">
+                              <label for="user_phone">Recepient Phone number</label>
+                              <input type="tel" name="user_phone" id="user_phone" value="{{ studet_details.phone_number }}" placeholder="Recepient Phone number">
+                        </div>
+                        <div>
+                              <label for="payment_for">Being Payment for</label>
+                              <input type="text" name="payment_for" id="payment_for" placeholder="Request payment for">
+                        </div>
+                        <div>
+                              <label for="amount">Amount</label>
+                              <input type="text" name="amount" id="amount" placeholder="Amount you're requesting for">
+                        </div>
+                        <div>
+                              <label for="information">Additional Information</label>
+                              <textarea name="information" id="information" placeholder="Additional information"></textarea>
+                        </div>
+                        <button type="submit">Send payment request</button>
+                  </form>
+                  {% endfor %}
+            </div>
+      </div>
+      <script src="{{ url_for('static', filename='/js/admin/admin.js') }}"></script>
+</body>
+</html>

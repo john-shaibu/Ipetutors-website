@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root{
+      --black-color: #212121;
+      --green-color: #3bc171;
+      --white-color: #ffffff;
+      --grey-color: #717171;
+
+      --normal-shadow: 0px 4px 40px rgba(59, 193, 113, 12%);
+      --double-shadow: 0px 4px 12px rgba(59, 193, 113, 15%), 0px 8px 24px rgba(59, 193, 113, 12%);
+}
+
+* {
+      margin: 0;
+      padding: 0;
+}
+*, ::before, ::after{
+      box-sizing: border-box;
+}
+body{
+      font-family: 'Poppins', sans-serif;
+      font-size: 1em;
+      font-weight: 400;
+      /* line-height: 1.4; */
+      color: var(--black-color);
+      background-color: var(--white-color);
+
+}
+a {
+      text-decoration: none;
+      color: inherit;
+}
+ul {
+      list-style: none;
+}
+
+img {
+      max-width: 100%;
+      vertical-align: middle;
+}
+
+.container{
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1em;
+      /* background-color: #111880; */
+}
+
+.register_form{
+      margin-top: 4em;
+      margin-bottom: 4em;
+}
+.register_form h2{
+      font-size: 2.5em;
+      color: var(--black-color);
+      font-weight: 800;
+}
+.form-container{
+      display: flex;
+      gap: 2em;
+      flex-direction: column;
+}
+.form-container form > div{
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+}
+
+sup{
+      color: red;
+}
+
+.form_section_header{
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+}
+
+.form_section_header h3{
+      font-size: 1.2em;
+      color: var(--black-color);
+}
+.form_section_header p{
+      font-size: 0.875em;
+      color: var(--grey-color);
+}
+
+ .form_inner > div:not(.btn-group){
+      display: flex;
+      flex-direction: column;
+      /* background-color: rebeccapurple; */
+      gap: 1.5em;
+}
+
+form > div > div > .names, 
+form > div > div > .state, 
+form > div > div > .address,
+form > div > div > .email
+{
+      display: flex;
+      width: 100%;
+      /* background-color: red; */
+      gap: 1em;
+      /* flex-wrap: wrap; */
+}
+
+form .names div, 
+form .state div, 
+ form .address div,
+ form .email div
+ {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75em;
+}
+form .names div label, 
+form .state div label, 
+form .address div label,
+form .email div label
+{
+      font-size: 0.875em;
+      color: var(--black-color);
+      font-weight: 500;
+}
+::placeholder {
+      color: #bababa;
+}
+form .names div input, 
+form .state div select,
+form .address div input,
+form .email div input
+{
+      height: 45px;
+      border: 1px solid #d6d8e7;
+      border-radius: 4px;
+      /* background-color: #fbfbfd; */
+      padding: 0 1em;
+      font-family: 'poppins', sans-serif;
+      outline: none;
+      transition: all .2s;
+}
+form .address div textarea{
+      height: 100px;
+      border: 1px solid #d6d8e7;
+      border-radius: 4px;
+      /* background-color: #fbfbfd; */
+      padding: 1em;
+      font-family: 'poppins', sans-serif;
+      outline: none;
+      transition: all .2s;
+      resize: vertical;
+}
+
+form .names div input:focus, 
+form .state div select:focus,
+form .address div input:focus,
+form .address div textarea:focus,
+form .email div input:focus
+{
+      background-color: #fbfbfd;
+      box-shadow: 0 4px 5px rgba(59, 193, 113, 12%);
+      /* border-color: var(--green-color); */
+}
+
+form .age > div, form .marital_status > div, form .gender > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+}
+form .age > div span, 
+form .gender > div span, 
+form .marital_status > div span
+{
+      color: var(--black-color);
+      font-size: 0.875em;
+      font-weight: 500;
+}
+form .age > div > div,
+form .gender > div > div,
+form .marital_status > div > div
+{
+      display: flex;
+      gap: 0.875em;
+      flex-wrap: wrap;
+}
+form .age > div > div label,
+form .gender > div > div label,
+form .marital_status > div > div label
+
+{
+      padding: 8px 16px;
+      border: 1px solid #d6d8e7;
+      border-radius: 20px;
+      font-size: 0.875em;
+      color: var(--grey-color);
+      display: block;
+      flex-wrap: wrap;
+      transition: background-color .3s;
+      cursor: pointer;
+     white-space: nowrap;
+}
+form .age > div > div label:hover,
+form .gender > div > div label:hover,
+form .marital_status > div > div label:hover
+{
+      background-color: #fbfbfd;
+}
+#married:checked ~ .married,
+#single:checked ~ .single
+{
+      background-color: rgba(59, 193, 113, 12%);
+      border-color: var(--green-color);
+      color: var(--green-color);
+      font-weight: 600;
+}
+#male:checked ~ .malegender,
+#female:checked ~ .femalegender
+{
+      background-color: rgba(59, 193, 113, 12%);
+      border-color: var(--green-color);
+      color: var(--green-color);
+      font-weight: 600;
+}
+#group_10_15:checked ~ .group_10_15,
+#group_15_20:checked ~ .group_15_20,
+#group_20_25:checked ~ .group_20_25,
+#group_25_30:checked ~ .group_25_30,
+#group_30_above:checked ~ .group_30_above
+{
+      background-color: rgba(59, 193, 113, 12%);
+      border-color: var(--green-color);
+      color: var(--green-color);
+      font-weight: 600;
+}
+
+#virtual:checked ~ .virtualtutor,
+#home:checked ~ .hometutor
+{
+      background-color: rgba(59, 193, 113, 12%);
+      border-color: var(--green-color);
+      color: var(--green-color);
+      font-weight: 600;
+}
+input[type='radio']{
+      display: none;
+}
+.btn-group{
+      display: flex;
+      /* background-color: red; */
+      display: flex;
+      justify-content: right;
+      margin-top: 2em;
+      /* align-items: right; */
+}
+.btn-group button{
+      background-color: var(--green-color);
+      height: 40px;
+      border: none;
+      min-width: 140px;
+      font-family: 'poppins', sans-serif;
+      color: var(--white-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: var(--double-shadow);
+}
+.btn-group button:disabled{
+      background-color: var(--grey-color);
+      cursor: not-allowed;
+}
+.btn-group .btn-submit,
+.four.active ~ .btn-group .btn-next{
+      display: none;
+}
+.one.active ~ .btn-group .btn-prev{
+      display: none;
+}
+.two.active ~ .btn-group .btn-prev, 
+.three.active ~ .btn-group .btn-prev,
+.four.active ~ .btn-group .btn-prev
+{
+      background-color: transparent;
+      box-shadow: none;
+      color: var(--green-color);
+      border: 1px solid var(--green-color);
+}
+.four.active ~ .btn-group .btn-submit{
+      display: block;
+}
+.two.active ~ .btn-group, .three.active ~ .btn-group, .four.active ~ .btn-group{
+      justify-content: space-between;
+}
+
+
+
+.form_inner > div:not(.btn-group){
+      display: none;
+}
+.form_inner > div.active{
+      display: flex;
+}

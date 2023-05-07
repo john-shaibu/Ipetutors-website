@@ -1,0 +1,252 @@
+
+
+<main>
+      <div class="register_form">
+            <div class="container">
+                  <h2>Student registration form</h2>
+                  <div class="form-container">
+                        <div class="progress">
+
+                        </div>
+                        <form action="{{ url_for('registration.studentRegister') }}" method="post">
+                              <div class="form_inner">
+                                    <div class="form_step one active">
+                                         <div class="form_section_header">
+                                                <h3>Personal Information</h3>
+                                                <p>Your personal Information</p>
+                                         </div>
+                                         <div class="names">
+                                                <div>
+                                                      <label for="firstname">Firstname <sup>*</sup></label>
+                                                      <input type="text" name="firstname" id="firstname" placeholder="Firstname" required>
+                                                </div>
+                                                <div>
+                                                      <label for="lastname">Lastname <sup>*</sup></label>
+                                                      <input type="text" name="lastname" id="lastname" placeholder="Lastname" required>
+                                                </div>
+                                                <div>
+                                                      <label for="othername">Other name</label>
+                                                      <input type="text" name="othername" id="othername" placeholder="Other names" required>
+                                                </div>
+                                          </div>
+                                          <div class="state">
+                                                <div>
+                                                      <label for="stateOfOrigin">State of origin <sup>*</sup></label>          
+                                                      <select onchange="toggleLGA(this);" id="state" name="stateOfOrigin" id="stateOfOrigin" required>
+                                                            <option value="" selected="selected">- Select State -</option>
+                                                            <option value="Abia">Abia</option>
+                                                            <option value="Adamawa">Adamawa</option>
+                                                            <option value="AkwaIbom">AkwaIbom</option>
+                                                            <option value="Anambra">Anambra</option>
+                                                            <option value="Bauchi">Bauchi</option>
+                                                            <option value="Bayelsa">Bayelsa</option>
+                                                            <option value="Benue">Benue</option>
+                                                            <option value="Borno">Borno</option>
+                                                            <option value="Cross River">Cross River</option>
+                                                            <option value="Delta">Delta</option>
+                                                            <option value="Ebonyi">Ebonyi</option>
+                                                            <option value="Edo">Edo</option>
+                                                            <option value="Ekiti">Ekiti</option>
+                                                            <option value="Enugu">Enugu</option>
+                                                            <option value="FCT">FCT</option>
+                                                            <option value="Gombe">Gombe</option>
+                                                            <option value="Imo">Imo</option>
+                                                            <option value="Jigawa">Jigawa</option>
+                                                            <option value="Kaduna">Kaduna</option>
+                                                            <option value="Kano">Kano</option>
+                                                            <option value="Katsina">Katsina</option>
+                                                            <option value="Kebbi">Kebbi</option>
+                                                            <option value="Kogi">Kogi</option>
+                                                            <option value="Kwara">Kwara</option>
+                                                            <option value="Lagos">Lagos</option>
+                                                            <option value="Nasarawa">Nasarawa</option>
+                                                            <option value="Niger">Niger</option>
+                                                            <option value="Ogun">Ogun</option>
+                                                            <option value="Ondo">Ondo</option>
+                                                            <option value="Osun">Osun</option>
+                                                            <option value="Oyo">Oyo</option>
+                                                            <option value="Plateau">Plateau</option>
+                                                            <option value="Rivers">Rivers</option>
+                                                            <option value="Sokoto">Sokoto</option>
+                                                            <option value="Taraba">Taraba</option>
+                                                            <option value="Yobe">Yobe</option>
+                                                            <option value="Zamfara">Zamafara</option>
+                                                      </select>                                            
+                                                </div>
+                                                <div>
+                                                      <label for="lga">Local Government <sup>*</sup></label>          
+                                                      <select name="lga" id="lga" class="select-lga" required>
+                                                            
+                                                      </select>                                            
+                                                </div>
+                                         </div>
+                                         <div class="age">
+                                                <div>
+                                                      <span>Which Age group do you fall? <sup>*</sup></span>
+                                                      <div>
+                                                            <input type="radio" name="age" id="group_10_15" value="age_10_15" required>
+                                                            <input type="radio" name="age" id="group_15_20" value="age_15_20" required>
+                                                            <input type="radio" name="age" id="group_20_25" value="age_20_25" required>
+                                                            <input type="radio" name="age" id="group_25_30" value="age_25_30" required>
+                                                            <input type="radio" name="age" id="group_30_above" value="age_30_above" required>
+                                                            <label for="group_10_15" class="group_10_15">
+                                                                  10 - 15
+                                                            </label>
+                                                            <label for="group_15_20" class="group_15_20">
+                                                                  15 - 20
+                                                            </label>
+                                                            <label for="group_20_25" class="group_20_25">
+                                                                  20 - 25
+                                                            </label>
+                                                            <label for="group_25_30" class="group_25_30">
+                                                                  25 - 30
+                                                            </label>
+                                                            <label for="group_30_above" class="group_30_above">
+                                                                  30 & above
+                                                            </label>
+                                                      </div>
+                                                </div>
+                                         </div>
+                                         <div class="marital_status">
+                                                <div>
+                                                      <span>Are you single or married? <sup>*</sup></span>
+                                                      <div>
+                                                            <input type="radio"  value="married" name="marital_status" id="married">
+                                                            <input type="radio"  value="single" name="marital_status" id="single">
+                                                            <label for="married" class="married">
+                                                                  <i class="ri-female-line"></i>
+                                                                  Married
+                                                            </label>
+                                                            <label for="single" class="single">
+                                                                  <i class="ri-female-line"></i>
+                                                                  Single
+                                                            </label>
+                                                      </div>
+                                                </div>
+                                         </div>
+                                         <div class="gender">
+                                                <div>
+                                                      <span>What's your gender? <sup>*</sup></span>
+                                                      <div>
+                                                            <input type="radio" value="male"  name="gender" id="male" required>
+                                                            <input type="radio" value="female"  name="gender" id="female" required>
+                                                            <label for="male" class="malegender">
+                                                                  <i class="ri-female-line"></i>
+                                                                  Male
+                                                            </label>
+                                                            <label for="female" class="femalegender">
+                                                                  <i class="ri-female-line"></i>
+                                                                  Female
+                                                            </label>
+                                                      </div>
+                                                </div>
+                                         </div>
+                                    </div>
+                                    <div class="form_step two">
+                                          <div class="form_section_header">
+                                                <h3>Contact  Information</h3>
+                                                <p>How can we contact you?</p>
+                                         </div>
+                                          <div class="address">
+                                                <div>
+                                                      <label for="address">Address <sup>*</sup></label>
+                                                      <input type="text" name="address" id="address" placeholder="Address">
+                                                </div>
+                                          </div>
+                                          <div class="email">
+                                                <div>
+                                                      <label for="phone">Phone number <sup>*</sup></label>
+                                                      <input type="text" name="phone" id="phone" placeholder="Phone number">
+                                                </div>
+                                                <div>
+                                                      <label for="email">Email <sup>*</sup></label>
+                                                      <input type="tel" name="email" id="email" placeholder="Email">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="form_step three">
+                                          <div class="form_section_header">
+                                                <h3>Parent or Guardian</h3>
+                                                <p>Parent or Guardian details</p>
+                                         </div>
+                                         <div class="address">
+                                                <div>
+                                                      <label for="guardian_fullname">Guardian fullname <sup>*</sup></label>
+                                                      <input type="text" name="guardian_fullname" id="guardian_fullname" placeholder="Guardian fullname">
+                                                </div>
+                                          </div>
+                                          <div class="email">
+                                                <div>
+                                                      <label for="guardian_occupation">Occupation</label>
+                                                      <input type="text" name="guardian_occupation" id="guardian_occupation" placeholder="Occupation">
+                                                </div>
+                                                <div>
+                                                      <label for="guardian_phone_number">Phone number <sup>*</sup></label>
+                                                      <input type="text" name="guardian_phone_number" id="guardian_phone_number" placeholder="Phone number">
+                                                </div>
+                                                <div>
+                                                      <label for="guardian_email">Email</label>
+                                                      <input type="tel" name="guardian_email" id="guardian_email" placeholder="Email">
+                                                </div>
+                                          </div>
+                                          <div class="address">
+                                                <div>
+                                                      <label for="guardian_address">Address <sup>*</sup></label>
+                                                      <input type="text" name="guardian_address" id="guardian_address" placeholder="Address">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="form_step four">
+                                          <div class="form_section_header">
+                                                <h3>Application preference</h3>
+                                                <p>Set your application preferences</p>
+                                         </div>
+                                         <div class="gender">
+                                                <div>
+                                                      <span>Which teaching style do you prefer? <sup>*</sup></span>
+                                                      <div>
+                                                            <input type="radio" value="virtual" name="teaching_type" id="virtual" required>
+                                                            <input type="radio" value="home" name="teaching_type" id="home" required>
+                                                            <label for="virtual" class="virtualtutor">
+                                                                  Virtual/Online tutor
+                                                            </label>
+                                                            <label for="home" class="hometutor">
+                                                                  <i class="ri-female-line"></i>
+                                                                  Home/Physical Tutor
+                                                            </label>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                         <div class="address">
+                                                <div>
+                                                      <label for="topics_or_subject">Enter Subjects/Topics <sup>*</sup></label>
+                                                      <input type="text" name="topics_or_subject" id="topics_or_subject" placeholder="E.g : Maths, English, chemistry....etc" required>
+                                                </div>
+                                          </div>
+                                         <div class="address">
+                                                <div>
+                                                      <label for="problem_subject">Subjects you are having difficulties with? <sup>*</sup></label>
+                                                      <input type="text" name="problem_subject" id="problem_subject" placeholder="E.g : Maths, English, chemistry....etc">
+                                                </div>
+                                          </div>
+                                         <div class="address">
+                                                <div>
+                                                      <label for="additional_information">Any additional information?</label>
+                                                      <textarea name="additional_information" id="additional_information" placeholder="Some additional information..."></textarea>
+                                                </div>
+                                          </div>
+                                          
+                                    </div>
+                                    <div class="btn-group">
+                                          <button type="button" class="btn-prev">Prev</button>
+                                          <button type="button" class="btn-next">Next</button>
+                                          <button type="submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+                                    <script src="{{ url_for('static', filename='js/lga.js') }}"></script>
+                              </div>
+                        </form>
+                  </div>
+            </div>
+      </div>
+</main>

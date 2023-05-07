@@ -1,0 +1,104 @@
+@import 'style.css';
+
+.services-hero{
+
+      background-color: rgba(59, 193, 113, 20%);
+}
+
+.services-hero .hero-grid__text{
+      display: flex;
+      flex-direction: column;
+      padding: 5em 0 0 0;
+      /* align-items: center; */
+      gap: 1em;
+}
+.hero-grid__text h2{
+      font-size: 3em;
+      font-weight: 800;
+      color: var(--black-color);
+}
+.hero-grid__text span{
+      color: var(--green-color);
+      font-size: 1.1em;
+}
+.hero-grid__text p{
+      color: var(--grey-color);
+      font-size: 1.2em;
+      line-height: 200%;
+}
+.services-section {
+      margin: 4em 0 0 0;
+}
+.services-section > .container{
+      /* background-color: var(--grey-color); */
+      display: flex;
+      flex-direction: column;
+      gap: 3em;
+}
+.services-section .service-grid__inner{
+      /* margin: 1em 0; */
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 2em;
+      justify-content: space-between;
+      flex-direction: column;
+}
+
+.service-grid__inner .one{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* background-color: var(--green-color); */
+}
+.service-grid__inner .one div{
+      max-width: 400px;
+      /* height: 300px; */
+      overflow: hidden;
+      object-fit: cover;
+      /* background-color: var(--green-color); */
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      border: 12px solid var(--white-color);
+      outline: 1px solid #d6d8e7;
+      box-shadow: var(--double-shadow);
+}
+.service-grid__inner.left-side > .two > div, .service-grid__inner.right-side > .two > div{
+      display: flex;
+      gap: 1.5em;
+      flex-direction: column;
+}
+
+:is(.service-grid__inner.left-side, .service-grid__inner.right-side) > .two  h2{
+      color: var(--black-color);
+      font-size: 2em;
+}
+:is(.service-grid__inner.left-side, .service-grid__inner.right-side) > .two  p{
+      color: var(--grey-color);
+      font-size: 1em;
+      line-height: 200%;
+}
+@media screen and (min-width : 992px){
+      nav {
+            justify-content: space-between;
+            /* width: 100%; */
+      }
+      nav .menu {
+            width: auto;
+      }
+      .services-section .service-grid__inner{
+            gap: 0;
+            flex-direction: row;
+            margin: 3em 0;
+      }
+      .service-grid__inner .one, .service-grid__inner .two{
+            flex: 1 0 50%;
+      }
+      .service-grid__inner.right-side{
+            flex-direction: row-reverse;
+      }
+      .service-grid__inner.right-side > .two h2, .service-grid__inner.right-side > .two p{
+            text-align: right;
+      }
+}

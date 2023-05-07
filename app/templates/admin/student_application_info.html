@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Student info - IpeTutors</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='/styles/admin/student_application_info.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+      <div class="site">  
+            <aside>
+                  <div class="navbar_inner">
+                        <i class="ri-close-line close_sidebar_btn"></i>
+                        <div class="logo"><a href="{{ url_for('index') }}">ipe<span>Tutors</span></a></div>
+                        <ul>
+                              <li>
+                                    <a href="{{ url_for('admin.dashboard') }}" >
+                                          <i class="ri-layout-4-line"></i>
+                                          Overview                                   
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.registeredStudents') }}" class="active_link">
+                                          <i class="ri-user-2-line"></i>
+                                          Students
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.registeredTeachers') }}">
+                                          <i class="ri-team-line"></i>
+                                          Teachers
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.appliedStudents') }}">
+                                          <i class="ri-user-add-line"></i>
+                                          Applicants
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="{{ url_for('admin.adminPage') }}">
+                                          <i class="ri-settings-3-line"></i>
+                                          Settings
+      
+                                    </a>
+                              </li>
+                        </ul>
+                  </div>
+
+            </aside>
+            <div class="main_container">
+                  {% include 'admin/admin_components/header.html' %}
+                  <main>
+                        {% for info in studentInfo %}
+      
+                        <div class="dashboard_content">
+                              <div class="beadcrumb">
+                                    <a href="#">Dashboard</a> > <a href="{{url_for('admin.registeredStudents') }}">Students</a>> <a href="#">{{ info.firstname | capitalize }} {{ info.lastname | capitalize }}</a>
+                              </div>
+                              <div class="info">
+                                    <div class="personal_information">
+                                          <h4>Personal Information</h4>
+                                          <div>
+                                                <div>
+                                                     <b>Fullname</b>
+                                                     <p>{{ info.firstname | capitalize }} {{ info.lastname | capitalize }} {{ info.othernames | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                      <div>
+                                                           <b>Age group</b>
+                                                           <p>{{ info.age}}</p>
+                                                      </div>
+                                                      <div>
+                                                           <b>Gender</b>
+                                                           <p>{{ info.gender | capitalize }}</p>
+                                                      </div>          
+                                                      <div>
+                                                           <b>Marital status</b>
+                                                           <p>{{ info.marital_status | capitalize }}</p>
+                                                      </div>          
+                                                </div>
+                                                <div>
+                                                      <div>
+                                                           <b>State</b>
+                                                           <p>{{ info.state | capitalize }}</p>
+                                                      </div>
+                                                      <div>
+                                                           <b>Local Government</b>
+                                                           <p>{{ info.lga | capitalize }}</p>
+                                                      </div>          
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="contact">
+                                          <h4>Contact Information</h4>
+                                          <div>
+                                                <div>
+                                                     <b>Address</b>
+                                                     <p>{{ info.address | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                     <b>Email</b>
+                                                     <p>{{ info.email | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                     <b>Phone Number</b>
+                                                     <p>{{ info.phone_number | capitalize }}</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="guardian">
+                                          <h4>Parent / Guardian information</h4>
+                                          <div>
+                                                <div>
+                                                      <b>Fullname</b>
+                                                      <p>{{ info.guardian_fullname | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                      <b>Occupation</b>
+                                                      <p>{{ info.guardian_occupation | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                      <b>Phone number</b>
+                                                      <p>{{ info.guardian_phone_number | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                      <b>Address</b>
+                                                      <p>{{ info.guardian_address | capitalize }}</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="preference">
+                                          <h4>Application preference</h4>
+                                          <div>
+                                                <div>
+                                                      <b>Preferred teaching style</b>
+                                                      <p>{{ info.teaching_mode | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                      <b>Subjects</b>
+                                                      <p>{{ info.topics_or_subject | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                      <b>Difficulties</b>
+                                                      <p>{{ info.difficulties | capitalize }}</p>
+                                                </div>
+                                                <div>
+                                                      <b>Additional information</b>
+                                                      <p>{{ info.additional_information | capitalize }}</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>   
+                        </div>                       
+                        <div class="student_action">
+                              <ul>
+                                    <li><a href="{{ url_for('admin.sendStudentMessage', id=info.id) }}"><i class="ri-mail-send-line"></i>Send message</a></li>
+                                    <li><a href="{{ url_for('admin.requestPayment', id=info.id) }}"><i class="ri-bank-card-line"></i>Request payment</a></li>
+                                    <li><a href="{{ url_for('admin.sendStudentMessage', id=info.id) }}"><i class="ri-delete-bin-6-line"></i>Delete Record</a></li>
+                              </ul>
+                        </div>                                        
+                        {% endfor %}
+                  </main>
+            </div>
+      </div>
+      <script src="{{ url_for('static', filename='/js/admin/admin.js') }}"></script>
+
+</body>
+</html>

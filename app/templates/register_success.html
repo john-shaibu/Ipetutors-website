@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Registration sucess | ipeTutors</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles/register_success.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+      <div class="container">
+            <div class="success_info">
+                  <h3>Registration Successful</h3>
+                  <b>Hello, John Shaibu.</b>
+                  <p>
+                        You have completed your application and your application was successful. 
+                        You will get an email or SMS notification from us
+                        in the next <b>24 to 48 hours</b> to know our response. 
+                        We hope to have you in our midst soon.
+                        <br>
+                  </p>
+                  <b>Thanks, ipeTutors</b>
+                  <a href="{{ url_for('index') }}"><button>Go back to homepage</button></a>
+            </div>
+      </div>
+      
+</body>
+</html>

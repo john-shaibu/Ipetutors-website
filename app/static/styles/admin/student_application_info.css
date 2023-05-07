@@ -1,0 +1,122 @@
+
+@import url('admin_components/base.css');
+
+
+.dashboard_content{
+      background-color: #FDFDFD;
+      height: calc(100vh - 150px);
+      overflow-y: auto;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      position: relative;
+}
+
+.dashboard_content .info{
+      display: flex;
+      gap: 1em;
+      flex-direction: column;
+}
+.info h4{
+      font-size: 1em;
+      color: var(--black-color);
+}
+.info b{
+      font-size: 0.875em;
+      color: var(--black-color);
+      font-weight: 600;
+}
+.info p{
+      font-size: 0.875em;
+      color: var(--black-color);
+}
+/* .info > div{
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+} */
+.info .personal_information, 
+.info .contact,
+.info .guardian,
+.info .preference
+{
+      display: flex;
+      flex-direction: column;
+      gap: 0.875em;
+}
+.personal_information > div,
+ .contact > div,
+ .guardian > div,
+ .preference > div
+ {
+      display: flex;
+      gap: 1em;
+      flex-direction: column;
+}
+.personal_information > div > div:not(:first-of-type){
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+}
+.personal_information > div > div:not(:first-of-type) >div, 
+ .contact > div > div,
+ .guardian > div > div,
+ .preference > div > div
+ {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+}
+
+.student_action{
+      display: flex;
+      width: 100%;
+      background-color: var(--white-color);
+      border-top: 1px solid #d6d8e7;
+      height: 75px;
+      justify-content: center;
+}
+.student_action ul{
+      display: flex;
+      align-items: center;
+      gap: 1.5em;
+      justify-content: center;
+      flex-wrap: wrap;
+}
+.student_action ul  li a{
+      min-width: 140px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      padding: 8px;
+      gap: 0.5em;
+      font-weight: 500;
+      transition: all .2s;
+      
+}
+.student_action ul  li:first-of-type a{
+      background-color: var(--green-color);
+      color: var(--white-color);
+}
+.student_action ul  li:nth-of-type(2) a{
+      color: var(--green-color);
+      border: 1px solid var(--green-color);
+}
+.student_action ul  li:nth-of-type(3) a{
+      color: #ff3050;
+      border: 1px solid #ff3050;
+}
+.student_action ul  li:nth-of-type(1) a:hover, 
+.student_action ul  li:nth-of-type(2) a:hover, 
+.student_action ul  li:nth-of-type(3) a:hover{
+      font-weight: 600;
+      border-width: 2px;
+}
+@media screen and (min-width : 800px) {
+      .personal_information > div > div:not(:first-of-type){
+            flex-direction: row;
+      }
+}
