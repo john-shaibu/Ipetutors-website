@@ -68,6 +68,7 @@ class enquires(db.Model):
       phone = db.Column(db.String(60), nullable=False, default = 'no phone provided')
       subject = db.Column(db.String(120), nullable=False, default = 'no subject provided')
       body = db.Column(db.String(800), nullable=False, default = 'no content provided')
+      date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
       def __repr__(self):
             return f"enquires('{self.subject}', '{self.body})"

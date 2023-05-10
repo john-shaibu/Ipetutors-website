@@ -92,8 +92,11 @@ def  studentsInfo(id):
 
 @bp.route('/enquires', methods=('GET', 'POST'))
 def  enquires():
+      from app.models import enquires as enq
 
-      return render_template('/admin/enquires.html')
+      enquires_made = enq.query.order_by(enquires.date.desc()).all()
+
+      return render_template('/admin/enquires.html', enquiresMade = enquires_made)
 
 @bp.route('/settings', methods=('GET', 'POST'))
 def  adminPage():

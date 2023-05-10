@@ -68,23 +68,20 @@
                                     <h2>Enquires</h2>
                               </div>
                               <div class="enquires_container">
-                                    <a href="#" class="enquiry">
-                                          <h3>Qui sit irure enim labore occaecat Lorem labore culpa ullamco dolor voluptate.</h3>
-                                          <div class="enquiry_details">
-                                                <p><i class="ri-user-2-line"></i>John Shaibu</p>
-                                                <p><i class="ri-mail-line"></i>Johnmaxwell058@gmail.com</p>
-                                                <p><i class="ri-phone-line"></i>+23482874866</p>
-                                                <p><i class="ri-check-line"></i>unreplied</p>
-                                          </div>
-                                          <p>
-                                                Dolor dolore nisi aute aute fugiat non laborum velit occaecat 
-                                                magna cupidatat laborum commodo. Culpa et amet culpa 
-                                                eiusmod in nostrud sunt. Occaecat id elit quis occaecat nostrud 
-                                                ullamco. Sunt proident eu do qui aliqua irure qui fugiat adipisicing 
-                                                deserunt excepteur officia commodo. Amet incididunt nulla cupidatat 
-                                                pariatur Lorem sint irure exercitation. Non nostrud labore pariatur est.
-                                          </p>
-                                    </a>
+                                    {% for enquiry in enquires %}
+                                          <a href="#" class="enquiry">
+                                                <h3>{{ enquiry.subject }}</h3>
+                                                <div class="enquiry_details">
+                                                      <p><i class="ri-user-2-line"></i>{{ enquiry.fullname }}</p>
+                                                      <p><i class="ri-mail-line"></i>{{ enquiry.email }}</p>
+                                                      <p><i class="ri-phone-line"></i>{{ enquiry.phone }}</p>
+                                                      <p><i class="ri-check-line"></i>{{ enquiry.status }}</p>
+                                                </div>
+                                                <p>
+                                                      {{ enquiry.body }}
+                                                </p>
+                                          </a>
+                                    {% endfor %}
                                     <a href="#" class="enquiry">
                                           <h3>Qui sit irure enim labore occaecat Lorem labore culpa ullamco dolor voluptate.</h3>
                                           <div class="enquiry_details">
